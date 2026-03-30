@@ -2,7 +2,7 @@
 
 # PPCL: Plasticity-Preserving Continual Learning
 
-**Status: Work in progress — targeting NeurIPS 2026**
+**Status: Active research (targeting NeurIPS 2026**)
 
 ## What is this?
 PPCL investigates plasticity collapse in continual self-supervised learning. In standard continual SSL, by Task 5 the encoder is using only 2-3 effective dimensions out of 512. There is no room to absorb new information. PPCL addresses this directly.
@@ -21,7 +21,7 @@ $$L_{PPCL}=\text{SimCLR}(z_{stability})+\lambda\times\text{Uniformity}(z_{plasti
 ## Key Theoretical Finding
 BYOL's EMA momentum is mathematically equivalent to an implicit L2 regulariser on encoder parameters:
 $$L_{EMA}=L_{task}+L_{stability}\times(\theta-\alpha\times\theta_{target})^2$$
-where $\theta_{target}$ is proportional to $\theta_{prev}$. This explains why BYOL outperforms continual methods in continual settings — not because of architectural differences, but because of implicit L2 regularisation. PPCL makes this tradeoff explicit and tunable.
+where $\theta_{target}$ is proportional to $\theta_{prev}$. This explains why BYOL outperforms continual methods in continual settings — not because of architectural differences, but because of implicit L2 regularisation. PPCL makes this tradeoff explicit and tunable.This finding has not been directly investigated in the continual SSL literature, to the best of our knowledge.
 ## Preliminary Baseline Results
 The following results are from ACE, the supervised continual learning framework on which PPCL is built. They establish the baseline performance that PPCL extends into the self-supervised setting.
 | Method | Avg Accuracy | Forgetting | Std Dev |
