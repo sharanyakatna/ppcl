@@ -1,0 +1,8 @@
+# Pinned for NeurIPS-style reproducibility. Install torch/torchvision from
+# https://pytorch.org for your CUDA version if the versions below do not match.
+torch==2.2.2
+torchvision==0.17.2
+numpy==1.26.4
+scipy==1.12.0
+tqdm==4.66.2
+matplotlib==3.8.3
