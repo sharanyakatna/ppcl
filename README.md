@@ -11,7 +11,7 @@ When training an SSL model sequentially on tasks, representations collapse over 
 This is distinct from catastrophic forgetting. Forgetting means old knowledge is overwritten. Plasticity collapse means the model's ability to learn anything new degrades. Both happen simultaneously in continual SSL.
 ## The Approach
 PPCL partitions the projection head output (128 dims) into two subspaces:
-- **Stability dimensions (80%)** — trained with standard SimCLR contrastive loss. These learn discriminative features for current and past tasks.
+- **Stability dimensions (90%)** — trained with standard SimCLR contrastive loss. These learn discriminative features for current and past tasks.
 - **Plasticity reserve dimensions (10%)** — trained with a uniformity loss. These dimensions are kept spread out and active, preserving the model's capacity to absorb future tasks.
 **PPCL Loss:**
 $$L_{PPCL}=\text{SimCLR}(z_{stability})+\lambda\times\text{Uniformity}(z_{plasticity})$$
