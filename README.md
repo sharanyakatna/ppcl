@@ -12,7 +12,7 @@ This is distinct from catastrophic forgetting. Forgetting means old knowledge is
 ## The Approach
 PPCL partitions the projection head output (128 dims) into two subspaces:
 - **Stability dimensions (80%)** — trained with standard SimCLR contrastive loss. These learn discriminative features for current and past tasks.
-- **Plasticity reserve dimensions (20%)** — trained with a uniformity loss. These dimensions are kept spread out and active, preserving the model's capacity to absorb future tasks.
+- **Plasticity reserve dimensions (10%)** — trained with a uniformity loss. These dimensions are kept spread out and active, preserving the model's capacity to absorb future tasks.
 **PPCL Loss:**
 $$L_{PPCL}=\text{SimCLR}(z_{stability})+\lambda\times\text{Uniformity}(z_{plasticity})$$
 **Two novel contributions:**
